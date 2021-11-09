@@ -44,7 +44,7 @@ Exmaple Value
 
 ## Usage
 
-Please ensure you have AWS CLI and [Admin Profile](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html) configured before running SimpleCRMAPI. Your admin profile should have certain permissions to create IAM role and policy, API Gateway, Lambda, DynamoDB, CloudWatch Log, and Alarms.
+Please ensure you have Terraform, AWS CLI and, [Admin Profile](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html) configured before running SimpleCRMAPI. Your AWS admin profile should have certain permissions to create IAM role and policy, API Gateway, Lambda, DynamoDB, CloudWatch Log and Alarms.
 
 To run this SimpleCRMAPI please execute:
 
