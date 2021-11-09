@@ -36,6 +36,10 @@ resource "aws_api_gateway_method_response" "response_200" {
   resource_id = aws_api_gateway_resource.api_resource.id
   http_method = aws_api_gateway_method.api_operation[count.index].http_method
   status_code = "200"
+
+  response_models = {
+    "application/json" = "Empty"
+  }
 }
 
 resource "aws_api_gateway_method_response" "response_500" {
@@ -44,10 +48,14 @@ resource "aws_api_gateway_method_response" "response_500" {
   resource_id = aws_api_gateway_resource.api_resource.id
   http_method = aws_api_gateway_method.api_operation[count.index].http_method
   status_code = "500"
+
+  response_models = {
+    "application/json" = "Error"
+  }
 }
 
 
-resource "aws_api_gateway_integration_response" "integration_response" {
+resource "aws_api_gateway_integration_response" "integration_response_200" {
   count       = length(var.apigw_method)
   rest_api_id = aws_api_gateway_rest_api.api_gateway_rest.id
   resource_id = aws_api_gateway_resource.api_resource.id
