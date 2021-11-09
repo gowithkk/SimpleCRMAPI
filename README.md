@@ -21,6 +21,26 @@ Once deployment is completed, the following display as outputs:
      * e.g. https://lqk0ux4xmg.execute-api.ap-southeast-2.amazonaws.com/dev/Customers
      * Use CURL or Postman as your favour to invoke the returned API endpint URL.
 
+## Usage
+
+Please ensure you have Terraform, AWS CLI and, [Admin Profile](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html) configured before running SimpleCRMAPI. Your AWS admin profile should have certain permissions to create IAM role and policy, API Gateway, Lambda, DynamoDB, CloudWatch Log and Alarms.
+
+To run this SimpleCRMAPI please execute:
+
+```
+git clone https://github.com/gowithkk/SimpleCRMAPI.git
+```
+
+```bash
+cd SimpleCRMAPI
+terraform workspace new dev
+terraform init
+terraform plan --var-file="dev.tfvars"
+terraform apply --var-file="dev.tfvars"
+```
+
+Note that this project may create resources that cost money. Run `terraform destroy --var-file="dev.tfvars"` when you don't need these resources.
+
 ## Documentation for API Endpoints
 
 All URIs are relative to SimpleCRM_apigw-dev-apigateway.yaml
@@ -41,26 +61,6 @@ Exmaple Value
   "address": "string"
 }
 ```
-
-## Usage
-
-Please ensure you have Terraform, AWS CLI and, [Admin Profile](https://docs.aws.amazon.com/polly/latest/dg/setup-aws-cli.html) configured before running SimpleCRMAPI. Your AWS admin profile should have certain permissions to create IAM role and policy, API Gateway, Lambda, DynamoDB, CloudWatch Log and Alarms.
-
-To run this SimpleCRMAPI please execute:
-
-```
-git clone https://github.com/gowithkk/SimpleCRMAPI.git
-```
-
-```bash
-cd SimpleCRMAPI
-terraform workspace new dev
-terraform init
-terraform plan --var-file="dev.tfvars"
-terraform apply --var-file="dev.tfvars"
-```
-
-Note that this project may create resources that cost money. Run `terraform destroy --var-file="dev.tfvars"` when you don't need these resources.
 
 ## Requirements
 
