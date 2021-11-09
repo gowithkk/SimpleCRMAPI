@@ -9,7 +9,7 @@ variable "api_description" {
 }
 
 variable "apigw_path" {
-  description = "Specify API Gateway Resource Name"
+  description = "API Gateway Resource Name"
   type        = string
 }
 
@@ -19,12 +19,12 @@ variable "apigw_method" {
 }
 
 variable "api_auth" {
-  description = "API authentication, default is NONE"
+  description = "API authentication method"
   type        = string
 }
 
 variable "api_gw_integration" {
-  description = "API Gateway integration type, default is AWS (Lambda)"
+  description = "API Gateway integration type"
   type        = string
 }
 
@@ -34,7 +34,7 @@ variable "api_deploy_stage_name" {
 }
 
 variable "dynamodb_table_name" {
-  description = "Name of the DynamoDB table"
+  description = "DynamoDB table name"
   type        = string
 }
 
@@ -44,7 +44,7 @@ variable "lambda_funtion_name" {
 }
 
 variable "runtime_type" {
-  description = "runtime type"
+  description = "Runtime type"
   type        = string
 }
 
@@ -55,7 +55,7 @@ variable "s3_prefix_name" {
 
 
 variable "archive_source_file" {
-  description = "archive_source_file"
+  description = "Archive source file name"
   type        = string
 }
 
